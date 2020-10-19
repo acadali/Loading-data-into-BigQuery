@@ -18,7 +18,8 @@ Fill the form and click **Create Dataset**. Dataset will be created, and it will
 
 ![Test Image 4]( https://github.com/acadali/Loading-data-into-BigQuery/blob/main/3.png)
 
-Download a subset of NYC from here. Select nyctaxi dataset then click &quot;Create Table&quot;.
+Download a subset of NYC from <a href="https://github.com/acadali/Loading-data-into-BigQuery/blob/main/nyc_tlc_yellow_trips_2018_subset_1.csv" download>
+</a>. Select nyctaxi dataset then click **Create Table**.
 
 Add the below options.
 
