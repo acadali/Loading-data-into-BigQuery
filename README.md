@@ -4,7 +4,7 @@ In some labs, we worked on public datasets available in Cloud Storage. In this l
 
 In this lab, we will learn how to load data from different sources. Create tables using DDL.
 
-Lets Start
+# Lets Start
 
 First log in to GCP platform, and from the navigation side menu, select BigQuery. Make sure you have selected your project, while creating dataset.
 
@@ -22,13 +22,13 @@ Download a subset of NYC from here. Select nyctaxi dataset then click &quot;Crea
 
 Add the below options.
 
-1. Create table from: Upload
-2. Choose file: select the file where you downloaded locally.
-3. File format: csv
-4. Table name: 2018trips.
-5. Schema: check auto detect
+1. Create table from: **Upload
+2. Choose file: **select the file where you downloaded locally.
+3. File format: **csv
+4. Table name: **2018trips.
+5. Schema: **check auto detect
 
-Click &quot;Create Table&quot;
+Click **Create Table
 
 ![Test Image 4]( https://github.com/acadali/Loading-data-into-BigQuery/blob/main/4.png)
 
@@ -38,7 +38,7 @@ You should see the table below the nyctaxi dataset. Select 2018trips and view th
 
 In the query editor, write a query to list the top 5 most expensive trips of the year. Paste the query in query editor and run the query.
 
-SELECT \* FROM nyctaxi.2018trips ORDER BY fare\_amount DESC LIMIT 5
+    SELECT * FROM nyctaxi.2018trips ORDER BY fare_amount DESC LIMIT 5
 
 ![Test Image 4]( https://github.com/acadali/Loading-data-into-BigQuery/blob/main/6.png)
 
@@ -46,7 +46,7 @@ Now, we will try to load another data of same 2018 trip data, that is available 
 
 In the Cloud Shell, paste the following commands.
 
-bq load \ --source\_format=CSV \ --autodetect \ --noreplace \ nyctaxi.2018trips \ gs://cloud-training/OCBL013/nyc\_tlc\_yellow\_trips\_2018\_subset\_2.csv
+    bq load \ --source\_format=CSV \ --autodetect \ --noreplace \ nyctaxi.2018trips \ gs://cloud-training/OCBL013/nyc_tlc_yellow_trips_2018_subset_2.csv
 
 ![Test Image 4]( https://github.com/acadali/Loading-data-into-BigQuery/blob/main/7.png)
 
@@ -54,7 +54,7 @@ We can also create tables from other tables with DDL.
 
 Paste the query in query editor and run the query. It will select the data from nyctaxi.2018trips and create a new table &quot;January\_trips&quot; and add data from the select query.
 
-CREATE TABLE nyctaxi.january\_trips AS SELECT \* FROM nyctaxi.2018trips WHERE EXTRACT(Month FROM pickup\_datetime)=1;
+    CREATE TABLE nyctaxi.january_trips AS SELECT * FROM nyctaxi.2018trips WHERE EXTRACT(Month FROM pickup_datetime)=1;
 
 ![Test Image 4]( https://github.com/acadali/Loading-data-into-BigQuery/blob/main/8.png)
 
